@@ -8,7 +8,7 @@
 #define WHEEL_DIAMETER 5.6  // wheel diameter in cm
 #define MOTOR_SPEED 20      // motor speed
 
-#define LINE_LENGTH 5  // line length in cm
+#define LINE_LENGTH 3  // line length in cm
 #define WIDTH 5        // width of the map
 #define HEIGHT 4       // height of the map
 
