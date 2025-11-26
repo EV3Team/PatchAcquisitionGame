@@ -6,19 +6,21 @@
 
 #define DIFF 10
 
-// [¼³Á¤] 4x4
+// [¼³Á
 int limitRow = 4;
 int limitColumn = 4;
 
+// [Ãß°¡] noiseFilter º¯¼ö Ãß°¡ (¶óÀÎ
 int nMotorSpeedSetting = 30, vertex = 0, count = 0, row = 0, val, r = 0, c = 0;
+int noiseFilter = 0;
 int S[6][6], dt[6][6];
 
 void go()
 {
     val = 5;
+    displayBigTextLine(1, "count = %d", count);
     if( getColorName(c2) == 5 ) // 5 : red
     {
-        // [µ¿Àû º¯°æ] ¿ª¼ø °è»ê: 4 - count°¡ ¾Æ´Ï¶ó (limi
         if( row % 2 == 0 ) S[row][count] = 1;
         else S[row][(limitColumn - 1) - count] = 1;
         playTone(440, 20); sleep(100);
@@ -33,18 +35,32 @@ void go()
         setMotorSpeed(lm, nMotorSpeedSetting + val);
         setMotorSpeed(rm, nMotorSpeedSetting - val);
     }
-    if(getColorName(c1) == 4 || getColorName(c3) == 4) vertex++;
-    else vertex = 0;
+
+    // [¼öÁ¤µÊ] µð¹Ù¿î½
+    // ¼±(³ë¶û)ÀÌ º¸ÀÌ¸é Áï½Ã vertex Áõ
+    if(getColorName(c1) == 4 || getColorName(c3) == 4)
+    {
+        vertex++;
+        noiseFilter = 0; // ¼±ÀÌ º¸ÀÌ¸é 
+    }
+    else
+    {
+        vertex = 0;
+    }
+
     if( vertex == 1 ) {
         count++;
+        sleep(250);
+        // [»èÁ¦µÊ] °­Á¦ Á÷Áø(Blind Forward
+        // ·Îº¿ À§Ä¡°¡ Æ²¾îÁö´Â ¿øÀÎÀÌ¾úÀ¸
     }
+
     displayBigTextLine(1, "count = %d", count);
 }
 
-// [¢®¡×uoA¢®E¡Ë¡Í¢®IiE] E
+// [ÁÂÈ¸
 void turnLeft()
 {
-
     setMotorSpeed(lm, -nMotorSpeedSetting * 4/10);
     setMotorSpeed(rm, nMotorSpeedSetting * 4/10);
 
@@ -68,7 +84,7 @@ void turnLeft()
     sleep(200);
 }
 
-// [¢®¡×uoA¢®E¡Ë¡
+// [¿ìÈ¸
 void turnRight()
 {
     setMotorSpeed(lm, nMotorSpeedSetting * 4/10);
@@ -88,6 +104,8 @@ void turnRight()
         sleep(2);
     }
 
+    sleep(50);
+
     setMotorSpeed(lm, 0);
     setMotorSpeed(rm, 0);
     sleep(200);
@@ -105,16 +123,12 @@ void completeSearch()
     {
         go();
 
-        // [µ¿Àû º¯°æ] ¿­ÀÇ ³¡ °¨Á
         if( count == limitColumn - 1 )
         {
-            // [µ¿Àû º¯°æ]
             if( row == limitRow - 1 ) return;
 
-            // A|¢®¡×uo Ca (
             if( row % 2 == 0 )
             {
-                // [¿øº¹µÊ] ¹Ýº¹ È½¼ö 
                 for(int i = 0; i < 4; i++)
                 {
                     if( getColorName(c2) == 5 )
@@ -128,10 +142,8 @@ void completeSearch()
                 }
                 turnRight();
             }
-            // E|¢®¡×uo Ca (
             else
             {
-                  // [¿øº¹µÊ] ¹Ýº¹ È½¼ö 
                   for(int i = 0; i < 3; i++)
                   {
                       if( getColorName(c2) == 5 )
@@ -144,12 +156,11 @@ void completeSearch()
                       else sleep(90);
                   }
                   setMotorSpeed(lm, nMotorSpeedSetting * 4/10);
-    							setMotorSpeed(rm, nMotorSpeedSetting * 4/10);
-    							sleep(800);
+                            setMotorSpeed(rm, nMotorSpeedSetting * 4/10);
+                            sleep(800);
                   turnLeft();
             }
 
-            // ¢®E¢®IUA¢®¡×o C
             if( row % 2 == 0 )
             {
                   while( getColorName(c3) > 4 ) go();
@@ -167,8 +178,8 @@ void completeSearch()
                   setMotorSpeed(rm, 35);
                   sleep(400);
                   setMotorSpeed(lm, nMotorSpeedSetting * 4/10);
-    							setMotorSpeed(rm, nMotorSpeedSetting * 4/10);
-    							sleep(400);
+                            setMotorSpeed(rm, nMotorSpeedSetting * 4/10);
+                            sleep(400);
                   turnLeft();
             }
             row++;
@@ -225,19 +236,19 @@ task main()
     while( getButtonPress(1) == 0 ) sleep(10);
     completeSearch();
 
-    // 180µµ 
+    // 180µ
     setMotorSpeed(lm, 20);
     setMotorSpeed(rm, 20);
     sleep(500);
 
-    // 180µµ 
+    // 180µ
     setMotorSpeed(lm, -20);
     setMotorSpeed(rm, 20);
     sleep(1650);
 
     count = row = 0;
 
-    // DP °è»ê [
+    // DP °è
     for(int i = 0; i < limitRow; i++)
         for(int j = 0; j < limitColumn; j++)
         {
@@ -249,7 +260,7 @@ task main()
 
       int x = 0;
       int y = 100;
-      // È­¸é Ãâ·
+      // È­¸é 
       for(int i = 0; i < limitRow; i++)
       {
           y = y - 10;
@@ -262,11 +273,11 @@ task main()
       }
 
       row = 0;
-      // ½ÃÀÛ ÁÂÇ¥ ¼³Á¤ [
+      // ½ÃÀÛ ÁÂÇ
       r = limitRow - 1;
       c = limitColumn - 1;
 
-      // ÃÖÀû 
+      // ÁÖ
       while( r != 0 || c != 0 )
       {
           if( r == 0 ) goLeft();
