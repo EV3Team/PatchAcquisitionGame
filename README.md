@@ -1,5 +1,4 @@
-# PatchAcquisitionGame 
-**2_1**
+# PatchAcquisitionGame 2_1조
 
 ## 1단계 최단경로 패치획득게임
 
