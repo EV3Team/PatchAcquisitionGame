@@ -5,6 +5,22 @@
 
 ## 2단계 자유경로 패치획득게임
 
+
+### 프로젝트 구조
+```
+PatchAcquisitionGame/
+├── README.md
+├── .gitignore
+├── reference/
+│   └── senior_code.py (또는 해당 파일명)
+├── stage1-shortest-path/
+│   ├── solution.py
+│   └── test.py
+└── stage2-free-path/
+    ├── solution.py
+    └── test.py
+```
+
 ### 제출 파일
 - 1단계 과제 영상
 - 2단계 과제 영상
