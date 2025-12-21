@@ -182,7 +182,11 @@ cd stage2-free-path
 
 ## 🌐 프로젝트 웹페이지
 
-프로젝트 소개 웹페이지를 제공합니다. `index.html` 파일을 브라우저에서 열어 확인하세요.
+프로젝트 소개 웹페이지가 GitHub Pages를 통해 배포되었습니다:
+
+**🔗 [https://ev3team.github.io/PatchAcquisitionGame/](https://ev3team.github.io/PatchAcquisitionGame/)**
+
+로컬에서 확인하려면:
 
 ```bash
 # 웹페이지 열기 (Windows)
