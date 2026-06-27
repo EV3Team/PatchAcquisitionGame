@@ -1,158 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patch Acquisition Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Patch Acquisition Game — 스마트센서와액츄에이터</title>
+    <link rel="stylesheet" href="base.css">
 </head>
 <body>
     <div class="container">
-        <!-- University Logo -->
+        <!-- Logos -->
         <div class="logos">
-            <img src="images/logo.png" alt="한양대학교 ERICA" class="logo">
+            <img src="images/logo.png" alt="한양대학교 ERICA">
         </div>
 
         <!-- Title -->
-        <h1 class="title fade-in">스마트센서와액츄에이터 Patch Acquisition Game</h1>
-
-        <!-- Conference Info -->
-        <div class="conference">
-            <p>최단경로 및 자유경로 패치획득게임 풀이</p>
+        <div class="title-section">
+            <h1>Patch Acquisition Game</h1>
+            <div class="subtitle">LEGO EV3 최단경로 · 자유경로 패치획득게임 풀이</div>
+            <div class="authors">윤태웅 · 박재형 · 이현빈 · 조민 · 전민석</div>
+            <div class="affiliation">한양대학교 ERICA 스마트융합공학부 스마트ICT융합전공<br>스마트센서와액츄에이터 · 팀 기말 프로젝트</div>
+            <div class="badges">
+                <span class="badge">LEGO EV3</span>
+                <span class="badge">RobotC</span>
+                <span class="badge">알고리즘</span>
+                <span class="badge">팀 프로젝트</span>
+                <span class="badge">PM</span>
+            </div>
         </div>
 
-        <!-- Authors -->
-        <div class="authors">
-            <a href="#" class="author">윤태웅</a>,
-            <a href="#" class="author">박재형</a>,
-            <a href="#" class="author">이현빈</a>,
-            <a href="#" class="author">조민</a>,
-            <a href="#" class="author">전민석</a>
+        <!-- About -->
+        <div class="section">
+            <h2>About Project</h2>
+            <p class="abstract">
+                LEGO EV3 로봇으로 격자 구조의 맵에서 패치를 획득하며 최고 점수를 달성하는 프로젝트입니다.
+                두 가지 과제로 구성되며, 각각 최단경로 알고리즘과 자유경로 최적화 전략을 구현합니다.
+            </p>
         </div>
-
-        <!-- Affiliations -->
-        <div class="affiliations">
-            <p>한양대학교 ERICA 스마트융합공학부 스마트ICT융합전공</p>
-        </div>
-
-        <!-- Divider -->
-        <div class="divider">* * *</div>
 
         <!-- Assignment 1 -->
-        <section class="section">
-            <h2>과제 1: 최단경로 패치획득게임</h2>
-            <div class="assignment-content">
-                <h3>지도 출력</h3>
-                <p>
-                    4X4 격자구조에서 [빨간색 패치]와 [초록색 패치]가 임의로 제공된 위치에 있다고 할 때,
-                    [출발점]에서 [도착점]까지 모든 격자점을 탐색한 후, [이동점]으로 최단경로로 이동하여
-                    도착 시에 각 패치의 위치를 디스플레이에 출력한다.
-                </p>
-
-                <h3>최단경로 복귀 / 점수 출력</h3>
-                <p>
-                    [이동점]에서 출발하여 [출발점]으로 최단경로로 이동하면서 패치를 획득하여 최대한 높은 점수를 얻은 후,
-                    [출발점] 도착 시에 획득점수를 디스플레이에 출력한다.
-                </p>
-
-                <h3>채점 기준</h3>
-                <ul>
-                    <li>빨간색 패치: +1점</li>
-                    <li>파란색 패치: -1점</li>
-                    <li>격자판은 실습 시간에 제공할 예정</li>
-                    <li>조별 획득점수에 따라 고득점순으로 차등점수를 부여함</li>
-                </ul>
-            </div>
-        </section>
+        <div class="section">
+            <h2>과제 1 · 최단경로 패치획득게임</h2>
+            <h3>게임 개요</h3>
+            <p class="abstract">
+                4×4 격자에서 빨간색·초록색 패치가 임의 위치에 주어질 때, 출발점에서 도착점까지 모든
+                격자점을 탐색한 뒤 이동점으로 최단경로 이동하여 패치 위치를 디스플레이에 출력합니다.
+                이후 이동점에서 출발점으로 최단경로 복귀하며 패치를 획득해 최대 점수를 얻고, 도착 시
+                획득 점수를 출력합니다.
+            </p>
+            <h3>채점 기준</h3>
+            <ul class="bullets">
+                <li>빨간색 패치 <strong>+1점</strong>, 파란색 패치 <strong>-1점</strong></li>
+                <li>격자판은 실습 시간에 제공</li>
+                <li>조별 획득점수 고득점순 차등 점수 부여</li>
+            </ul>
+        </div>
 
         <!-- Video 1 -->
-        <section class="section">
-            <h3>과제 1 시연 영상</h3>
+        <div class="section">
+            <h2>과제 1 시연 영상</h2>
             <div class="video-container">
-                <iframe width="800" height="450" src="https://www.youtube.com/embed/sBryQY9EAaY"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                <iframe src="https://www.youtube.com/embed/sBryQY9EAaY"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </div>
-        </section>
+        </div>
 
         <!-- Assignment 2 -->
-        <section class="section">
-            <h2>과제 2: 자유경로 패치획득게임</h2>
-            <div class="assignment-content">
-                <h3>게임 개요</h3>
-                <p>
-                    5X4 격자구조에서 [빨간색 패치]와 [초록색 패치]가 임의로 제공된 위치에 있다고 할 때,
-                    [출발점]에서 [도착점]까지 모든 격자점을 탐색한 후, [이동점]에서 출발하여 [출발점]으로
-                    자유경로로 이동하면서 패치를 획득하여 최대한 높은 점수를 얻은 다음, [출발점] 도착 시에
-                    획득점수를 디스플레이에 출력한다.
-                </p>
-
-                <h3>채점 기준</h3>
-                <ul>
-                    <li>빨간색 패치: 처음 방문 시 +5점, 재방문 시 매번 -2점</li>
-                    <li>파란색 패치: 방문할 때마다 매번 -5점</li>
-                    <li>이동 패널티: 각 격자점을 1칸 이동할 때마다 색상과 무관하게 -1점 감점</li>
-                    <li>자유경로 이동 시, 위, 아래, 왼쪽, 오른쪽으로 자유롭게 이동 가능</li>
-                    <li>조별 획득점수에 따라 고득점순으로 차등점수를 부여함</li>
-                </ul>
-            </div>
-        </section>
+        <div class="section">
+            <h2>과제 2 · 자유경로 패치획득게임</h2>
+            <h3>게임 개요</h3>
+            <p class="abstract">
+                5×4 격자에서 빨간색·초록색 패치가 임의 위치에 주어질 때, 모든 격자점을 탐색한 뒤
+                이동점에서 출발점까지 자유경로로 이동하며 패치를 획득해 최대 점수를 얻고, 도착 시
+                획득 점수를 출력합니다.
+            </p>
+            <h3>채점 기준</h3>
+            <ul class="bullets">
+                <li>빨간색 패치 · 처음 방문 <strong>+5점</strong>, 재방문 시 매번 <strong>-2점</strong></li>
+                <li>파란색 패치 · 방문할 때마다 <strong>-5점</strong></li>
+                <li>이동 패널티 · 1칸 이동마다 색상 무관 <strong>-1점</strong></li>
+                <li>상하좌우 자유 이동 가능</li>
+                <li>조별 획득점수 고득점순 차등 점수 부여</li>
+            </ul>
+        </div>
 
         <!-- Video 2 -->
-        <section class="section">
-            <h3>과제 2 시연 영상</h3>
+        <div class="section">
+            <h2>과제 2 시연 영상</h2>
             <div class="video-container">
-                <iframe width="800" height="450" src="https://www.youtube.com/embed/fHmVtW4JwN4"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                <iframe src="https://www.youtube.com/embed/fHmVtW4JwN4"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </div>
-        </section>
+        </div>
+
+        <!-- Team -->
+        <div class="section">
+            <h2>Team</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>이름</th><th>역할</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>윤태웅</td><td>PM</td></tr>
+                        <tr><td>박재형</td><td>프로젝트 개발</td></tr>
+                        <tr><td>이현빈</td><td>프로젝트 개발</td></tr>
+                        <tr><td>조민</td><td>PPT 제작 및 발표</td></tr>
+                        <tr><td>전민석</td><td>PPT 제작 및 발표</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
         <!-- Resources -->
-        <section class="section">
+        <div class="section">
             <h2>Resources</h2>
             <div class="resources">
-                <a href="https://github.com/EV3Team/PatchAcquisitionGame/tree/main/stage1-shortest-path/solution.c" target="_blank" class="resource-link">
-                    <span class="icon">💻</span>
+                <a href="https://github.com/EV3Team/PatchAcquisitionGame/tree/main/stage1-shortest-path/solution.c" class="resource-link" target="_blank" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8,3A2,2 0 0,0 6,5V9A2,2 0 0,1 4,11H3V13H4A2,2 0 0,1 6,15V19A2,2 0 0,0 8,21H10V19H8V14A2,2 0 0,0 6,12A2,2 0 0,0 8,10V5H10V3M16,3A2,2 0 0,1 18,5V9A2,2 0 0,0 20,11H21V13H20A2,2 0 0,0 18,15V19A2,2 0 0,1 16,21H14V19H16V14A2,2 0 0,1 18,12A2,2 0 0,1 16,10V5H14V3H16Z"/></svg>
                     <span>과제 1 코드 (solution.c)</span>
                 </a>
-                <a href="https://github.com/EV3Team/PatchAcquisitionGame/tree/main/stage2-free-path/solution.c" target="_blank" class="resource-link">
-                    <span class="icon">💻</span>
+                <a href="https://github.com/EV3Team/PatchAcquisitionGame/tree/main/stage2-free-path/solution.c" class="resource-link" target="_blank" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8,3A2,2 0 0,0 6,5V9A2,2 0 0,1 4,11H3V13H4A2,2 0 0,1 6,15V19A2,2 0 0,0 8,21H10V19H8V14A2,2 0 0,0 6,12A2,2 0 0,0 8,10V5H10V3M16,3A2,2 0 0,1 18,5V9A2,2 0 0,0 20,11H21V13H20A2,2 0 0,0 18,15V19A2,2 0 0,1 16,21H14V19H16V14A2,2 0 0,1 18,12A2,2 0 0,1 16,10V5H14V3H16Z"/></svg>
                     <span>과제 2 코드 (solution.c)</span>
                 </a>
-                <a href="https://github.com/EV3Team/PatchAcquisitionGame/blob/main/ppt/2_1%20PPT%20%EC%9E%90%EB%A3%8C.pptx" target="_blank" class="resource-link">
-                    <span class="icon">📊</span>
+                <a href="https://github.com/EV3Team/PatchAcquisitionGame/blob/main/ppt/2_1%20PPT%20%EC%9E%90%EB%A3%8C.pptx" class="resource-link" target="_blank" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/></svg>
                     <span>발표 자료 (PPT)</span>
                 </a>
+                <a href="https://github.com/EV3Team/PatchAcquisitionGame" class="resource-link" target="_blank" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"/></svg>
+                    <span>GitHub</span>
+                </a>
             </div>
-        </section>
-
-        <!-- Clone Repository -->
-        <section class="section">
-            <h2>Clone Repository</h2>
-            <div class="citation">
-                <pre id="bibtex">git clone https://github.com/EV3Team/PatchAcquisitionGame.git
-cd PatchAcquisitionGame</pre>
-                <button class="copy-btn" onclick="copyBibtex()">Copy Command</button>
-            </div>
-        </section>
+        </div>
 
         <!-- Contact -->
-        <section class="section">
+        <div class="contact">
             <h2>Contact</h2>
-            <p>문의사항이 있으시면 아래로 연락주세요:</p>
-            <p class="contact-info">
-                <a href="mailto:taewoong25@hanyang.ac.kr">taewoong25@hanyang.ac.kr</a>
-            </p>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="divider">* * *</div>
-            <p>&copy; 2025 Patch Acquisition Game Project. All rights reserved.</p>
-        </footer>
+            <p>문의사항은 아래 이메일로 연락주시기 바랍니다.</p>
+            <a href="mailto:taewoong25@hanyang.ac.kr">윤태웅 · taewoong25@hanyang.ac.kr</a>
+        </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
